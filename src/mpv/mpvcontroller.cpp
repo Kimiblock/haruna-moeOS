@@ -20,7 +20,7 @@ MpvController::MpvController(QObject *parent)
     std::setlocale(LC_NUMERIC, "C");
 
     m_mpv = mpv_create();
-    mpv_load_config_file(mpv, "/usr/share/moeOS-Docs/Celluloid.d/celluloid.options")
+    mpv_load_config_file(mpv, "/usr/share/moeOS-Docs/Celluloid.d/celluloid.options");
     if (!m_mpv) {
         qFatal("could not create mpv context");
     }
