@@ -10,6 +10,7 @@
 #include <QVariant>
 
 #include <clocale>
+#include <mpv/client.h>
 
 MpvController::MpvController(QObject *parent)
     : QObject(parent)
@@ -19,6 +20,7 @@ MpvController::MpvController(QObject *parent)
     std::setlocale(LC_NUMERIC, "C");
 
     m_mpv = mpv_create();
+    mpv_load_config_file(mpv, /usr/share/moeOS-Docs/Celluloid.d/celluloid.options)
     if (!m_mpv) {
         qFatal("could not create mpv context");
     }
